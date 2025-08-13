@@ -1,0 +1,32 @@
+using System;
+
+public class PersonCategorizer
+{
+    public static void Main(string[] args)
+    {
+        int age = 40;
+        double monthlyIncome = 80000; 
+        string category = CategorizePerson(age, monthlyIncome);
+        Console.WriteLine($"Category: {category}");
+    }
+
+    public static string CategorizePerson(int age, double income)
+    {
+        if (age >= 25 && age <= 35 && income > 50000)
+        {
+            return "Young Professional";
+        }
+        else if (age >= 36 && age <= 55 && income > 70000)
+        {
+            return "Middle-Aged Professional";
+        }
+        else if (age >= 56 && income < 30000)
+        {
+            return "Senior Citizen";
+        }
+        else
+        {
+            return "Other";
+        }
+    }
+}
